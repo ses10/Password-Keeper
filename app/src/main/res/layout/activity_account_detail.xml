@@ -1,45 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context="com.ses.passwordkeeper.AccountDetailActivity"
-    android:orientation="vertical">
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+          class="com.ses.passwordkeeper.AccountDetailFragment"
+          android:id="@+id/accounDetail_frag"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
 
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:layout_marginBottom="30dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Security Question 1 Answer"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Security Question 2 Answer"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Security Question 3 Answer"
-        android:layout_marginBottom="10dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="top"
-        android:text="Notes"/>
-
-
-</LinearLayout>
