@@ -1,7 +1,6 @@
 package com.ses.passwordkeeper;
 
-
-import android.app.ListFragment;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -11,13 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class AccountListFragment extends ListFragment {
+public class AccountListFragment extends android.support.v4.app.ListFragment {
 
     private SQLiteDatabase db;
     private Cursor cursor;
+
+    static interface AccountListListener {
+        void itemClicked(long id);
+    }
+
+    private AccountListListener listener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,5 +50,18 @@ public class AccountListFragment extends ListFragment {
         }
 
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (AccountListListener)context;
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        if (listener != null){
+            listener.itemClicked(id);
+        }
     }
 }
