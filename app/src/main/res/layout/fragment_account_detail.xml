@@ -10,12 +10,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/loginField"
         android:text="Login"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
+        android:id="@+id/passwordField"
         android:layout_marginBottom="30dp"/>
 
     <EditText
