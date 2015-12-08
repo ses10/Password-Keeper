@@ -19,6 +19,7 @@ public class AccountListFragment extends android.support.v4.app.ListFragment {
     private SQLiteDatabase db;
     private Cursor cursor;
 
+    //interface for the activity container
     static interface AccountListListener {
         void itemClicked(long id);
     }
@@ -36,6 +37,7 @@ public class AccountListFragment extends android.support.v4.app.ListFragment {
 
             cursor = db.query("Account", new String[]{"_id", "NAME"}, null, null, null, null, null);
 
+            //create and set the listAdapter
             CursorAdapter listAdapter = new SimpleCursorAdapter(inflater.getContext(),
                                                                 android.R.layout.simple_list_item_1,
                                                                 cursor,
